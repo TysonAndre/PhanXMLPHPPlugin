@@ -1,0 +1,3 @@
+xml/001.xml:3 PhanPluginXMLUndeclaredClass Invalid <class> node, could not find class \MyMissingClass
+xml/001.xml:4 PhanPluginXMLInvalidClass Invalid <class> node <class><unexpected>MyMissingClass</unexpected></class>, expected a string instead of child nodes, got 1 child node(s)
+xml/001.xml:6 PhanPluginXMLInvalidClass Invalid <class> node, expected a valid class name, got   MyClass  : Invalid namespaced name for FQSEN '\  MyClass  '
