@@ -10,7 +10,7 @@ if [ ! -e $EXPECTED_PATH ]; then
 fi
 echo "Running phan in '$PWD' ..."
 rm $ACTUAL_PATH -f
-./../vendor/bin/phan | tee $ACTUAL_PATH
+./../vendor/bin/phan --dead-code-detection | tee $ACTUAL_PATH
 # diff returns a non-zero exit code if files differ or are missing
 # This outputs the difference between actual and expected output.
 echo

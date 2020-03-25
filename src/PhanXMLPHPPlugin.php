@@ -84,7 +84,10 @@ class PhanXMLPHPPlugin extends PluginV3 implements BeforeAnalyzeCapability {
             );
             return;
         }
-        if (!$code_base->hasClassWithFQSEN($fqsen)) {
+        if ($code_base->hasClassWithFQSEN($fqsen)) {
+            $context = (new Context())->withFile(FileRef::getProjectRelativePathForPath($file));
+            $code_base->getClassByFQSEN($fqsen)->addReference($context);
+        } else {
             $this->emitXMLIssue(
                 $contents,
                 $class_node,
